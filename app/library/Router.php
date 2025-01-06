@@ -18,6 +18,7 @@ class Router
   {
     foreach ($this->routes as $route) {
       if ($route->match($route)) {
+        Redirect::register($route);
         return (new Controller)->call($route);
       }
     }

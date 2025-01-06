@@ -19,7 +19,7 @@ class Controller
     $controllerInstance = "app\\controllers\\" . $controller;
 
     if (!class_exists($controllerInstance)) {
-      throw new Exception("Controller {$controller} não existe");
+      throw new Exception("Método ou Rota inválida");
     }
 
     $controller = new $controllerInstance;

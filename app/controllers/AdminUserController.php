@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\User;
+use app\library\Redirect;
 
 class AdminUserController
 {
@@ -23,12 +24,15 @@ class AdminUserController
         $data = [
             'firstName' => 'rodrigo',
             'lastName' => 'faust',
-            'email' => 'xxx@gmail',
+            'email' => 'xxx3@gmail',
             'password' => password_hash('123', PASSWORD_DEFAULT),
         ];
 
-        User::insert($data);
-
+        if(User::insert($data)){
+            Redirect::message('/admin/users', 'Usuário Adicionado com sucesso!');
+            exit;
+        }
+        Redirect::message('/admin/users', 'Erro ao adicionar usuario!');
     }
 
     public function formEdit()
