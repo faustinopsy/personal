@@ -66,6 +66,8 @@ class View
 ```
 
 ### Renderização no Controlador
+detalhe importante (sistema de templates)
+https://platesphp.com/
 
 ```php
 class Portifolio{
