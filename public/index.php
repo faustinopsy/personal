@@ -24,7 +24,13 @@ try {
     $route->add('/admin/users/update', 'POST', 'AdminUserController:update');
     $route->add('/admin/users/delete', 'POST', 'AdminUserController:delete');
     $route->add('/logout', 'GET', 'LoginController:destroy');
-    
+    $route->add('/admin/blog-posts', 'GET', 'AdminBlogPostController:index');
+    $route->add('/admin/blog-posts/create', 'GET', 'AdminBlogPostController:formCreate');
+    $route->add('/admin/blog-posts/store', 'POST', 'AdminBlogPostController:insert');
+    $route->add('/admin/blog-posts/edit', 'GET', 'AdminBlogPostController:formEdit');
+    $route->add('/admin/blog-posts/update', 'POST', 'AdminBlogPostController:update');
+    $route->add('/admin/blog-posts/delete', 'POST', 'AdminBlogPostController:delete');
+
     $route->init();
   } catch (Exception $e) {
     var_dump($e->getMessage() . ' ' . $e->getFile() . ' ' . $e->getLine());
