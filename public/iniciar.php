@@ -1,6 +1,6 @@
 <?php
 
-use app\controllers\AdminUserController;
+use app\library\Router;
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -20,15 +20,4 @@ if (!file_exists(__DIR__ . '/logs')) {
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__FILE__, 2));
 $dotenv->load();
 
-// $conexao = Connection::connect();
-// var_dump($conexao);
-
-//test busca
-$user = new AdminUserController();
-$user->index();
-//test insert
-$user->insert();
-$user->index();
-//$user->formEdit();
-//$user->delete();
-//$user->index();
+$route = new Router;

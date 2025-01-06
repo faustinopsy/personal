@@ -6,3 +6,14 @@ Stack trace:
 #3 C:\Apache24\htdocs\personal\public\iniciar.php(27): app\controllers\AdminUserController->index()
 #4 {main}
   thrown in C:\Apache24\htdocs\personal\app\models\User.php on line 6
+
+[06-Jan-2025 17:46:22 UTC] PHP Fatal error:  Uncaught Error: Class "app\library\Redirect" not found in C:\Apache24\htdocs\personal\app\library\Router.php:21
+Stack trace:
+#0 C:\Apache24\htdocs\personal\public\index.php(13): app\library\Router->init()
+#1 {main}
+  thrown in C:\Apache24\htdocs\personal\app\library\Router.php on line 21
+[06-Jan-2025 17:46:57 UTC] PHP Fatal error:  Uncaught Error: Class "app\library\Redirect" not found in C:\Apache24\htdocs\personal\app\library\Router.php:21
+Stack trace:
+#0 C:\Apache24\htdocs\personal\public\index.php(13): app\library\Router->init()
+#1 {main}
+  thrown in C:\Apache24\htdocs\personal\app\library\Router.php on line 21
