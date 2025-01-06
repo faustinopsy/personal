@@ -2,18 +2,22 @@ CREATE DATABASE portfolio;
 
 USE portfolio;
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    is_admin TINYINT(1) DEFAULT 0,
-    two_fa_code VARCHAR(6),
-    two_fa_expires_at DATETIME
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(255) DEFAULT NULL,
+  `lastName` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `isAdmin` tinyint DEFAULT '0',
+  `two_fa_code` varchar(6) DEFAULT NULL,
+  `two_fa_expires_at` datetime DEFAULT NULL,
+  `image` varchar(245) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
 );
+
 
 CREATE TABLE password_resets (
     id INT AUTO_INCREMENT PRIMARY KEY,
