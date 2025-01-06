@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\User;
 use app\library\Redirect;
+use app\library\View;
 
 class AdminUserController
 {
@@ -11,7 +12,10 @@ class AdminUserController
     public function index()
     {
         $users = User::getAll();
-        var_dump($users );
+        View::render('admin/users/index', [
+            'title' => 'Gerenciar Usuários',
+            'users' => $users,
+        ]);
     }
 
     public function formCreate()
