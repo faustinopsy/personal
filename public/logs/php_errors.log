@@ -1,0 +1,8 @@
+[06-Jan-2025 17:32:51 UTC] PHP Fatal error:  Uncaught Error: Class "app\models\Model" not found in C:\Apache24\htdocs\personal\app\models\User.php:6
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\composer\ClassLoader.php(576): include()
+#1 C:\Apache24\htdocs\personal\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\app\controllers\AdminUserController.php(12): Composer\Autoload\ClassLoader->loadClass('app\\models\\User')
+#3 C:\Apache24\htdocs\personal\public\iniciar.php(27): app\controllers\AdminUserController->index()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\models\User.php on line 6

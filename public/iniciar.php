@@ -1,6 +1,6 @@
 <?php
 
-use app\database\Connection;
+use app\controllers\AdminUserController;
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -22,3 +22,13 @@ $dotenv->load();
 
 // $conexao = Connection::connect();
 // var_dump($conexao);
+
+//test busca
+$user = new AdminUserController();
+$user->index();
+//test insert
+$user->insert();
+$user->index();
+//$user->formEdit();
+//$user->delete();
+//$user->index();
