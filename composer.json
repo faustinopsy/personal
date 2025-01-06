@@ -1,0 +1,20 @@
+{
+  "name": "app/portifolio",
+  "autoload": {
+    "psr-4": {
+      "app\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "faustinopsy",
+      "email": "rodrigohipnose@gmail.com"
+    }
+  ],
+  "require": {
+    "stripe/stripe-php": "^10.3",
+    "league/plates": "^3.5",
+    "vlucas/phpdotenv": "^5.5",
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
