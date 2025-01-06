@@ -16,6 +16,7 @@ class Auth
       $stdClas->lastName = $user->lastName;
       $stdClas->fullName = $user->firstName . ' ' . $user->lastName;
       $stdClas->isAdmin = $user->isAdmin ?? false;
+      $stdClas->image = $user->image;
       $_SESSION['auth'] = $stdClas;
     }
   }

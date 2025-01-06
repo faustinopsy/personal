@@ -26,12 +26,24 @@ class AdminUserController
 
     public function insert()
     {
+        $uploadDirImages = dirname(__FILE__, 3) . '/public/uploads/';
+        if (!file_exists($uploadDirImages)) {
+            mkdir($uploadDirImages, 0777, true);
+        }
+
+        $image = $_FILES['image'];
+        $imagePath = '/uploads/' . basename($image['name']);
+        move_uploaded_file($image['tmp_name'], $uploadDirImages . basename($image['name']));
+
         $data = [
             'firstName' => strip_tags($_POST['firstName']),
             'lastName' => strip_tags($_POST['lastName']),
             'email' => strip_tags($_POST['email']),
             'password' => password_hash(strip_tags($_POST['password']), PASSWORD_DEFAULT),
+            'image' => $imagePath,
         ];
+
+        
 
         if(User::insert($data)){
             Redirect::message('/admin/users', 'Usuário Adicionado com sucesso!');
@@ -53,6 +65,7 @@ class AdminUserController
     public function update()
     {
         $id = strip_tags($_POST['id']);
+
         $data = [
             'firstName' => strip_tags($_POST['firstName']),
             'lastName' => strip_tags($_POST['lastName']),
@@ -61,6 +74,18 @@ class AdminUserController
 
         if (!empty($_POST['password'])) {
             $data['password'] = password_hash(strip_tags($_POST['password']), PASSWORD_DEFAULT);
+        }
+
+        if (!empty($_FILES['image']['name'])) {
+            $uploadDirImages = dirname(__FILE__, 3) . '/public/uploads/';
+            if (!file_exists($uploadDirImages)) {
+                mkdir($uploadDirImages, 0777, true);
+            }
+    
+            $image = $_FILES['image'];
+            $imagePath = '/uploads/' . basename($image['name']);
+            move_uploaded_file($image['tmp_name'], $uploadDirImages . basename($image['name']));
+            $data['image'] = $imagePath;
         }
 
         if(User::update($id, $data)){

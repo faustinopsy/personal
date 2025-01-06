@@ -45,7 +45,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </nav>
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 <div class="w3-main" style="margin-left:300px">
-
+<header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>My Portfolio</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+      <span class="w3-margin-right">Filter:</span> 
+      <button class="w3-button w3-black">ALL</button>
+      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    </div>
+    </div>
+  </header>
   <?php if (isset($_SESSION['flash_message'])): ?>
     <div class="w3-panel w3-<?= $_SESSION['flash_message']['type'] ?> text-center fade-out"" id="flash-message">
         <?= $_SESSION['flash_message']['message'] ?>

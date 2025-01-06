@@ -16,4 +16,5 @@ class User extends Model
   public readonly string $isAdmin;
   public ?string $two_fa_code;
   public ?string $two_fa_expires_at;
+  public ?string $image;
 }
