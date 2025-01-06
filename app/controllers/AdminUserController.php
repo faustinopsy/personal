@@ -8,7 +8,6 @@ use app\library\View;
 
 class AdminUserController
 {
-
     public function index()
     {
         $users = User::getAll();
@@ -20,51 +19,65 @@ class AdminUserController
 
     public function formCreate()
     {
-        
+        View::render('admin/users/create', [
+            'title' => 'Adicionar Usuário',
+        ]);
     }
 
     public function insert()
     {
         $data = [
-            'firstName' => 'rodrigo',
-            'lastName' => 'faust',
-            'email' => 'xxx3@gmail',
-            'password' => password_hash('123', PASSWORD_DEFAULT),
+            'firstName' => strip_tags($_POST['firstName']),
+            'lastName' => strip_tags($_POST['lastName']),
+            'email' => strip_tags($_POST['email']),
+            'password' => password_hash(strip_tags($_POST['password']), PASSWORD_DEFAULT),
         ];
 
         if(User::insert($data)){
             Redirect::message('/admin/users', 'Usuário Adicionado com sucesso!');
             exit;
         }
-        Redirect::message('/admin/users', 'Erro ao adicionar usuario!');
+        Redirect::message('/admin/users', 'Erro ao adicionar usuario!','red');
     }
 
     public function formEdit()
     {
-        $id = 5;
+        $id = strip_tags($_GET['id']);
         $user = User::where('id', $id);
-        var_dump($user);exit;
-        
+        View::render('admin/users/edit', [
+            'title' => 'Editar Usuário',
+            'user' => $user,
+        ]);
     }
 
     public function update()
     {
-        $id = 5;
+        $id = strip_tags($_POST['id']);
         $data = [
-            'firstName' => 'qqqqqqq',
-            'lastName' => 'cccccccc',
-            'email' => 'abc@123.com',
+            'firstName' => strip_tags($_POST['firstName']),
+            'lastName' => strip_tags($_POST['lastName']),
+            'email' => strip_tags($_POST['email']),
         ];
 
-        
-        User::update($id, $data);
+        if (!empty($_POST['password'])) {
+            $data['password'] = password_hash(strip_tags($_POST['password']), PASSWORD_DEFAULT);
+        }
 
+        if(User::update($id, $data)){
+            Redirect::message('/admin/users', 'Usuário Atualizado com sucesso!');
+            exit;
+        }
+        Redirect::message('/admin/users', 'Erro ao Atualizar Usuário!','red');
+        
     }
 
     public function delete()
     {
-        $id = 5;
-        User::delete($id);
-
+        $id = strip_tags($_POST['id']);
+        if(User::delete($id)){
+            Redirect::message('/admin/users', 'Usuário Deletado com sucesso!');
+            exit;
+        }
+        Redirect::message('/admin/users', 'Erro ao Deletar Usuário!','red');
     }
 }

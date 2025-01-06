@@ -17,3 +17,11 @@ Stack trace:
 #0 C:\Apache24\htdocs\personal\public\index.php(13): app\library\Router->init()
 #1 {main}
   thrown in C:\Apache24\htdocs\personal\app\library\Router.php on line 21
+[06-Jan-2025 19:32:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\library\Redirect::withMessage() in C:\Apache24\htdocs\personal\app\controllers\AdminUserController.php:70
+Stack trace:
+#0 [internal function]: app\controllers\AdminUserController->update()
+#1 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#2 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#3 C:\Apache24\htdocs\personal\public\index.php(14): app\library\Router->init()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\controllers\AdminUserController.php on line 70

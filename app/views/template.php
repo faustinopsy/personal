@@ -47,9 +47,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px">
 
   <?php if (isset($_SESSION['flash_message'])): ?>
-    <div id="flash-message" class="alert alert-<?= $_SESSION['flash_message']['type'] ?> text-center fade-out">
+    <div class="w3-panel w3-<?= $_SESSION['flash_message']['type'] ?> text-center fade-out"" id="flash-message">
+      <h3>Success!</h3>
         <?= $_SESSION['flash_message']['message'] ?>
-    </div>
+    </div> 
     <?php unset($_SESSION['flash_message']); ?>
   <?php endif; ?>
  

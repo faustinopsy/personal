@@ -3,6 +3,7 @@
 require './iniciar.php';
 
 try {
+    $route->add('/admin', 'GET', 'AdminController:index');
     $route->add('/admin/users', 'GET', 'AdminUserController:index');
     $route->add('/admin/users/create', 'GET', 'AdminUserController:formCreate');
     $route->add('/admin/users/store', 'POST', 'AdminUserController:insert');

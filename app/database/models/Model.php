@@ -134,6 +134,7 @@ abstract class Model
             $query->execute([...array_values($data), $id]);
 
             Transaction::close();
+            return true;
         } catch (PDOException $e) {
             Transaction::rollback();
             self::mensagemErro($e);
@@ -153,6 +154,7 @@ abstract class Model
             $query->execute([$id]);
 
             Transaction::close();
+            return true;
         } catch (PDOException $e) {
             Transaction::rollback();
             self::mensagemErro($e);

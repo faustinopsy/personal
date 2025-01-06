@@ -62,7 +62,7 @@ class Redirect
     }
   }
 
-  public static function message(string $to, string $message, string $type = 'success')
+  public static function message(string $to, string $message, string $type = 'green')
   {
       $_SESSION['flash_message'] = [
           'message' => $message,
