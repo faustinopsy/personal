@@ -25,8 +25,9 @@ class View
           throw new \Exception("View {$view} does not exist");
       }
   
+      self::addInstances('auth', Auth::class);
       $templates = new Engine($filePath);
-  
+      
       $templates->addData([
           'instances' => self::$instances,
       ]);

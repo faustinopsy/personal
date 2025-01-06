@@ -25,3 +25,131 @@ Stack trace:
 #3 C:\Apache24\htdocs\personal\public\index.php(14): app\library\Router->init()
 #4 {main}
   thrown in C:\Apache24\htdocs\personal\app\controllers\AdminUserController.php on line 70
+[06-Jan-2025 20:05:14 UTC] PHP Warning:  Undefined variable $Lang in C:\Apache24\htdocs\personal\app\views\auth\register.php on line 4
+[06-Jan-2025 20:05:14 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\Apache24\htdocs\personal\app\views\auth\register.php:4
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(169): include()
+#1 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(170): League\Plates\Template\Template->League\Plates\Template\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\vendor\league\plates\src\Engine.php(304): League\Plates\Template\Template->render(Array)
+#3 C:\Apache24\htdocs\personal\app\library\View.php(34): League\Plates\Engine->render('auth/register', Array)
+#4 C:\Apache24\htdocs\personal\app\controllers\RegisterController.php(14): app\library\View::render('auth/register', Array)
+#5 [internal function]: app\controllers\RegisterController->index()
+#6 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#7 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#8 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#9 {main}
+  thrown in C:\Apache24\htdocs\personal\app\views\auth\register.php on line 4
+[06-Jan-2025 20:08:21 UTC] PHP Warning:  Undefined variable $Lang in C:\Apache24\htdocs\personal\app\views\auth\forgot_password.php on line 4
+[06-Jan-2025 20:08:21 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\Apache24\htdocs\personal\app\views\auth\forgot_password.php:4
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(169): include()
+#1 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(170): League\Plates\Template\Template->League\Plates\Template\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\vendor\league\plates\src\Engine.php(304): League\Plates\Template\Template->render(Array)
+#3 C:\Apache24\htdocs\personal\app\library\View.php(34): League\Plates\Engine->render('auth/forgot_pas...', Array)
+#4 C:\Apache24\htdocs\personal\app\controllers\PasswordResetController.php(13): app\library\View::render('auth/forgot_pas...')
+#5 [internal function]: app\controllers\PasswordResetController->showRequestForm()
+#6 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#7 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#8 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#9 {main}
+  thrown in C:\Apache24\htdocs\personal\app\views\auth\forgot_password.php on line 4
+[06-Jan-2025 20:19:30 UTC] Erro ao enviar email: SMTP Error: Could not authenticate.
+[06-Jan-2025 20:19:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\library\Redirect::withMessage() in C:\Apache24\htdocs\personal\app\controllers\LoginController.php:39
+Stack trace:
+#0 [internal function]: app\controllers\LoginController->store()
+#1 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#2 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#3 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\controllers\LoginController.php on line 39
+[06-Jan-2025 20:21:42 UTC] Erro ao enviar email: SMTP Error: Could not authenticate.
+[06-Jan-2025 20:29:50 UTC] PHP Warning:  Undefined variable $Lang in C:\Apache24\htdocs\personal\app\views\two_factor.php on line 4
+[06-Jan-2025 20:29:50 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\Apache24\htdocs\personal\app\views\two_factor.php:4
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(169): include()
+#1 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(170): League\Plates\Template\Template->League\Plates\Template\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\vendor\league\plates\src\Engine.php(304): League\Plates\Template\Template->render(Array)
+#3 C:\Apache24\htdocs\personal\app\library\View.php(34): League\Plates\Engine->render('two_factor', Array)
+#4 C:\Apache24\htdocs\personal\app\controllers\TwoFactorController.php(15): app\library\View::render('two_factor')
+#5 [internal function]: app\controllers\TwoFactorController->index()
+#6 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#7 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#8 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#9 {main}
+  thrown in C:\Apache24\htdocs\personal\app\views\two_factor.php on line 4
+[06-Jan-2025 20:31:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\models\User::find() in C:\Apache24\htdocs\personal\app\controllers\TwoFactorController.php:28
+Stack trace:
+#0 [internal function]: app\controllers\TwoFactorController->verify()
+#1 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#2 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#3 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\controllers\TwoFactorController.php on line 28
+[06-Jan-2025 20:31:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\models\User::find() in C:\Apache24\htdocs\personal\app\controllers\TwoFactorController.php:28
+Stack trace:
+#0 [internal function]: app\controllers\TwoFactorController->verify()
+#1 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#2 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#3 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\controllers\TwoFactorController.php on line 28
+[06-Jan-2025 20:34:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\library\Redirect::withMessage() in C:\Apache24\htdocs\personal\app\controllers\RegisterController.php:47
+Stack trace:
+#0 [internal function]: app\controllers\RegisterController->store()
+#1 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#2 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#3 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\controllers\RegisterController.php on line 47
+[06-Jan-2025 20:37:31 UTC] PHP Fatal error:  Uncaught Error: Class "app\database\models\PasswordReset" not found in C:\Apache24\htdocs\personal\app\controllers\PasswordResetController.php:28
+Stack trace:
+#0 [internal function]: app\controllers\PasswordResetController->sendResetLink()
+#1 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#2 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#3 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#4 {main}
+  thrown in C:\Apache24\htdocs\personal\app\controllers\PasswordResetController.php on line 28
+[06-Jan-2025 20:40:30 UTC] PHP Fatal error:  Uncaught Error: Class "app\models\Model" not found in C:\Apache24\htdocs\personal\app\models\PasswordReset.php:4
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\composer\ClassLoader.php(576): include()
+#1 C:\Apache24\htdocs\personal\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\app\controllers\PasswordResetController.php(29): Composer\Autoload\ClassLoader->loadClass('app\\models\\Pass...')
+#3 [internal function]: app\controllers\PasswordResetController->sendResetLink()
+#4 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#5 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#6 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#7 {main}
+  thrown in C:\Apache24\htdocs\personal\app\models\PasswordReset.php on line 4
+[06-Jan-2025 20:41:34 UTC] PHP Deprecated:  Creation of dynamic property app\models\PasswordReset::$id is deprecated in C:\Apache24\htdocs\personal\app\database\models\Model.php on line 71
+[06-Jan-2025 20:41:34 UTC] PHP Deprecated:  Creation of dynamic property app\models\PasswordReset::$email is deprecated in C:\Apache24\htdocs\personal\app\database\models\Model.php on line 71
+[06-Jan-2025 20:41:34 UTC] PHP Deprecated:  Creation of dynamic property app\models\PasswordReset::$token is deprecated in C:\Apache24\htdocs\personal\app\database\models\Model.php on line 71
+[06-Jan-2025 20:41:34 UTC] PHP Deprecated:  Creation of dynamic property app\models\PasswordReset::$created_at is deprecated in C:\Apache24\htdocs\personal\app\database\models\Model.php on line 71
+[06-Jan-2025 20:46:33 UTC] PHP Warning:  Undefined array key "auth" in C:\Apache24\htdocs\personal\app\views\home.php on line 6
+[06-Jan-2025 20:46:33 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\Apache24\htdocs\personal\app\views\home.php:6
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(169): include()
+#1 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(170): League\Plates\Template\Template->League\Plates\Template\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\vendor\league\plates\src\Engine.php(304): League\Plates\Template\Template->render(Array)
+#3 C:\Apache24\htdocs\personal\app\library\View.php(34): League\Plates\Engine->render('home', Array)
+#4 C:\Apache24\htdocs\personal\app\controllers\HomeController.php(12): app\library\View::render('home')
+#5 [internal function]: app\controllers\HomeController->index()
+#6 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#7 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#8 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#9 {main}
+  thrown in C:\Apache24\htdocs\personal\app\views\home.php on line 6
+[06-Jan-2025 20:46:34 UTC] PHP Warning:  Undefined array key "auth" in C:\Apache24\htdocs\personal\app\views\home.php on line 6
+[06-Jan-2025 20:46:34 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in C:\Apache24\htdocs\personal\app\views\home.php:6
+Stack trace:
+#0 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(169): include()
+#1 C:\Apache24\htdocs\personal\vendor\league\plates\src\Template\Template.php(170): League\Plates\Template\Template->League\Plates\Template\{closure}('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\personal\vendor\league\plates\src\Engine.php(304): League\Plates\Template\Template->render(Array)
+#3 C:\Apache24\htdocs\personal\app\library\View.php(34): League\Plates\Engine->render('home', Array)
+#4 C:\Apache24\htdocs\personal\app\controllers\HomeController.php(12): app\library\View::render('home')
+#5 [internal function]: app\controllers\HomeController->index()
+#6 C:\Apache24\htdocs\personal\app\library\Controller.php(30): call_user_func_array(Array, Array)
+#7 C:\Apache24\htdocs\personal\app\library\Router.php(22): app\library\Controller->call(Object(app\library\Route))
+#8 C:\Apache24\htdocs\personal\public\index.php(27): app\library\Router->init()
+#9 {main}
+  thrown in C:\Apache24\htdocs\personal\app\views\home.php on line 6
+[06-Jan-2025 20:54:49 UTC] PHP Warning:  Undefined variable $authUser in C:\Apache24\htdocs\personal\app\views\partials\nav.php on line 11
