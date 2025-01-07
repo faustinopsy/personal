@@ -94,16 +94,24 @@ A organização do projeto segue uma estrutura simples e eficiente:
 project/
 ├── app/
 │   ├── controllers/
+│   ├── database/
+│   │   ├── models/
+│   │        └── Model.php
+│   │   └── Connection.php
+│   │   └── Transaction.php
 │   ├── models/
 │   └── views/
-│       ├── partials/
-│       └── templates/
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
+│       ├── admin/
+│       └── auth/
+│       └── pages/
+│       └── partial/
+│ 
 ├── vendor/
 ├── public/
+│   ├── assets/
+│      ├── css/
+│      ├── js/
+│      └── images/
 │   └── index.php
 └── .env
 ```
