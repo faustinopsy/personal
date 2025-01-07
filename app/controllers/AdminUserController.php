@@ -5,9 +5,15 @@ namespace app\controllers;
 use app\models\User;
 use app\library\Redirect;
 use app\library\View;
+use app\library\AuthMiddleware;
 
 class AdminUserController
 {
+    public function __construct()
+    {
+        AuthMiddleware::isAdmin();
+    }
+
     public function index()
     {
         $users = User::getAll();

@@ -5,9 +5,15 @@ namespace app\controllers;
 use app\models\BlogPost;
 use app\library\Redirect;
 use app\library\View;
+use app\library\AuthMiddleware;
 
 class AdminBlogPostController
 {
+    public function __construct()
+    {
+        AuthMiddleware::isAdmin();
+    }
+
     public function index()
     {
         $posts = BlogPost::getAll();

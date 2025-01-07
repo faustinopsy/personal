@@ -30,6 +30,19 @@ try {
     $route->add('/admin/blog-posts/edit', 'GET', 'AdminBlogPostController:formEdit');
     $route->add('/admin/blog-posts/update', 'POST', 'AdminBlogPostController:update');
     $route->add('/admin/blog-posts/delete', 'POST', 'AdminBlogPostController:delete');
+    $route->add('/admin/portfolio', 'GET', 'AdminPortfolioController:index');
+    $route->add('/admin/portfolio/create', 'GET', 'AdminPortfolioController:formCreate');
+    $route->add('/admin/portfolio/store', 'POST', 'AdminPortfolioController:insert');
+    $route->add('/admin/portfolio/edit', 'GET', 'AdminPortfolioController:formEdit');
+    $route->add('/admin/portfolio/update', 'POST', 'AdminPortfolioController:update');
+    $route->add('/admin/portfolio/delete', 'POST', 'AdminPortfolioController:delete');
+    $route->add('/admin/resumes', 'GET', 'AdminResumeController:index');
+    $route->add('/admin/resumes/create', 'GET', 'AdminResumeController:formCreate');
+    $route->add('/admin/resumes/store', 'POST', 'AdminResumeController:insert');
+    $route->add('/admin/resumes/edit', 'GET', 'AdminResumeController:formEdit');
+    $route->add('/admin/resumes/update', 'POST', 'AdminResumeController:update');
+    $route->add('/admin/resumes/delete', 'POST', 'AdminResumeController:delete');
+    
 
     $route->init();
   } catch (Exception $e) {
