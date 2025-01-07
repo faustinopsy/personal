@@ -47,6 +47,8 @@
 </section>
 
 <script>
+    
+
     document.getElementById('generate-content-btn').addEventListener('click', () => {
         const title = document.getElementById('title').value;
         const slug = document.getElementById('slug').value;
@@ -66,7 +68,7 @@
         .then(response => response.json())
         .then(data => {
             if (data.content) {
-                document.getElementById('content').value = data.content;
+                markdown.value(data.content);
                 alert('Conteúdo gerado com sucesso!');
             } else {
                 alert('Erro ao gerar conteúdo.');
@@ -78,19 +80,8 @@
         });
     });
 
-if (document.getElementById("content")) {
-    new SimpleMDE({
-        element: document.getElementById("content"),
-        spellChecker: false,
-        autosave: {
-            enabled: true,
-            unique_id: "content",
-        },
-        toolbar: [
-            "bold", "italic", "quote", "unordered-list", "ordered-list", 
-            "link", "image", "table", "horizontal-rule", "guide" ,"preview"
-        ]
+  document.querySelector('form').addEventListener('submit', (e) => {
+        const contentTextarea = document.getElementById('content');
+        contentTextarea.value = markdown.value();
     });
-}
-
 </script>
