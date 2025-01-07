@@ -1,19 +1,26 @@
 <?php $this->layout('template'); ?>
 
-<div class="container px-4 px-lg-5 mt-5">
-  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-  <?php 
-      $authUser = $instances['auth']::auth();
-      if ($authUser && $authUser->isAdmin){
-       echo "<p>Autenticado e admin</p>";
-      } 
-      elseif ($authUser){
-        echo "<p>Autenticado</p>";
-      }else{
-        echo "<p>home</p>";
-      }
-      
-      ?>
-      home
-  </div>
-</div>
+<section class="w3-container w3-padding-64">
+    <h1 class="w3-center"><?= $title ?></h1>
+    <div class="w3-row-padding">
+        <?php if (!empty($posts)): ?>
+            <?php foreach ($posts as $post): ?>
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <div class="w3-container w3-padding">
+                            <?php if (isset($post->title)): ?>
+                                <h5 class="w3-text-blue"><?= htmlspecialchars($post->title) ?></h5>
+                                <p>
+                                    <?= htmlspecialchars(mb_strimwidth(strip_tags($post->content ?? ''), 0, 100, '...')) ?>
+                                </p>
+                                <a href="/post/<?= $post->slug ?>" class="w3-button w3-blue w3-margin-top">Leia mais</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="w3-center">Nenhum item encontrado.</p>
+        <?php endif; ?>
+    </div>
+</section>

@@ -4,6 +4,8 @@ require './iniciar.php';
 
 try {
     $route->add('/home', 'GET', 'HomeController:index');
+    $route->add('/portifolio', 'GET', 'PortifolioController:index');
+    $route->add('/resume', 'GET', 'ResumeController:index');
     $route->add('/login', 'GET', 'LoginController:index');
     $route->add('/login', 'POST', 'LoginController:store');
     $route->add('/register', 'GET', 'RegisterController:index');
@@ -42,7 +44,8 @@ try {
     $route->add('/admin/resumes/edit', 'GET', 'AdminResumeController:formEdit');
     $route->add('/admin/resumes/update', 'POST', 'AdminResumeController:update');
     $route->add('/admin/resumes/delete', 'POST', 'AdminResumeController:delete');
-    
+   
+
 
     $route->init();
   } catch (Exception $e) {
