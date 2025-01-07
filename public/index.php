@@ -44,7 +44,8 @@ try {
     $route->add('/admin/resumes/edit', 'GET', 'AdminResumeController:formEdit');
     $route->add('/admin/resumes/update', 'POST', 'AdminResumeController:update');
     $route->add('/admin/resumes/delete', 'POST', 'AdminResumeController:delete');
-   
+    $route->add('/admin/blog-posts/generate-content', 'POST', 'AdminBlogPostController:generateContent');
+    $route->add('/blog/{id}', 'GET', 'HomeController:show');
 
 
     $route->init();
