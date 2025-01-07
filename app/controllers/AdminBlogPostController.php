@@ -164,7 +164,7 @@ class AdminBlogPostController
                 ],
                 [
                     'role' => 'user',
-                    'content' => "Crie um conteúdo detalhado para um blog com o título: '{$title}' e a descrição breve: '{$slug}'.",
+                    'content' => "Crie um conteúdo detalhado para um blog com o título: '{$title}' e use a descrição breve a seguir como contexto: '{$slug}' e no final da postagem descreva um exemplo prático no mundo real.",
                 ],
             ],
             'max_tokens' => 800,
