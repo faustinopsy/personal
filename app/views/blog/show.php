@@ -5,7 +5,8 @@
         <div class="w3-container">
             <h1><?= htmlspecialchars($post->title) ?></h1>
             <p><?= htmlspecialchars($post->slug) ?></p>
-            <div><?= $post->content ?></div>
+            <textarea id="content"><?= $post->content ?></textarea>
         </div>
     </div>
 </section>
+

@@ -77,4 +77,20 @@
             alert('Erro ao gerar conteúdo.');
         });
     });
+
+if (document.getElementById("content")) {
+    new SimpleMDE({
+        element: document.getElementById("content"),
+        spellChecker: false,
+        autosave: {
+            enabled: true,
+            unique_id: "content",
+        },
+        toolbar: [
+            "bold", "italic", "quote", "unordered-list", "ordered-list", 
+            "link", "image", "table", "horizontal-rule", "guide" ,"preview"
+        ]
+    });
+}
+
 </script>

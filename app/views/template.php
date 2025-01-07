@@ -11,16 +11,16 @@
  $baseUrl = $_ENV['BASE_URL'];
 
 echo '<link rel="stylesheet" href="'.$baseUrl .'/assets/css/w3.css">';
+echo '<link rel="stylesheet" href="'.$baseUrl .'/assets/plugin/markdown/simplemde.min.css">';
+echo '<script src="'.$baseUrl .'/assets/plugin/markdown/simplemde.min.js" defer></script>';
+echo '<script src="'.$baseUrl .'/assets/plugin/markdown/custom-markdown.js" defer></script>';
 echo '<link rel="stylesheet" href="'.$baseUrl .'/assets/css/fonts-google.css">';
 echo '<link rel="stylesheet" href="'.$baseUrl .'/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">';
 ?>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
-<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('content');
-</script>
+
 </head>
 <style>
     .fade-out {
