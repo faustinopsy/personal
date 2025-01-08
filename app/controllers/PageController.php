@@ -8,11 +8,15 @@ class PageController
 {
     public function privacyPolicy()
     {
-        echo 'Política de Privacidade';
+        return View::render('pages/privacy-policy', [
+            'title' => 'Política de Privacidade'
+        ]);
     }
 
     public function termsAndConditions()
     {
-        echo  'Termos e Condições';
+        return View::render('pages/terms-and-conditions', [
+            'title' => 'Termos e Condições'
+        ]);
     }
 }

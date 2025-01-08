@@ -29,6 +29,7 @@ class View
       $templates = new Engine($filePath);
       
       $templates->addData([
+          'Lang' => Lang::class,
           'instances' => self::$instances,
       ]);
   

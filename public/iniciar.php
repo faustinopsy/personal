@@ -1,6 +1,7 @@
 <?php
 
 use app\library\Router;
+use app\library\Lang;
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -19,5 +20,13 @@ if (!file_exists(__DIR__ . '/logs')) {
 
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__FILE__, 2));
 $dotenv->load();
+
+$defaultLanguage = 'pt';
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+$language = $_SESSION['lang'] ?? $defaultLanguage;
+
+Lang::setLanguage($language);
 
 $route = new Router;

@@ -2,18 +2,26 @@
 
 <section class="w3-container">
     <h1 class="text-center"><?= $title ?></h1>
-    <form action="/admin/blog-posts/store" method="POST" class="w3-container">
+    <form action="/admin/users/store" method="POST" class="w3-container" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="title" class="w3-text-blue">Título</label>
-            <input type="text" name="title" id="title" class="w3-input w3-border" required>
+            <label for="firstName" class="w3-text-blue">Primeiro Nome</label>
+            <input type="text" name="firstName" id="firstName" class="w3-input w3-border"  required>
         </div>
         <div class="mb-3">
-            <label for="slug" class="w3-text-blue">Slug</label>
-            <input type="text" name="slug" id="slug" class="w3-input w3-border" required>
+            <label for="lastName" class="w3-text-blue">Último Nome</label>
+            <input type="text" name="lastName" id="lastName" class="w3-input w3-border" required>
         </div>
         <div class="mb-3">
-            <label for="content" class="w3-text-blue">Conteúdo</label>
-            <textarea name="content" id="content" class="w3-input w3-border" rows="6" required></textarea>
+            <label for="email" class="w3-text-blue">Email</label>
+            <input type="email" name="email" id="email" class="w3-input w3-border"  required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="w3-text-blue">Senha </label>
+            <input type="password" name="password" id="password" class="w3-input w3-border">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="w3-text-blue">Foto</label>
+            <input type="file" name="image" id="image" class="w3-input w3-border" accept="image/*" required>
         </div>
         <button type="submit" class="w3-button w3-teal">Salvar</button>
     </form>

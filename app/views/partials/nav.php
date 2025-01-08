@@ -53,6 +53,18 @@ $routes = [
     endif; 
     ?>
 </div>
+<div class="w3-dropdown-hover">
+      <button class="w3-bar-item w3-button w3-padding" type="button" id="languageDropdown" >
+      <i class="fa fa-language" aria-hidden="true"></i>   <?= $Lang::get('language', 'Idioma') ?>
+      </button>
+      <ul class="w3-dropdown-content w3-bar-block w3-border" >
+        <li><a class="w3-bar-item w3-button" href="?lang=pt"><?= $Lang::get('portuguese', 'Português') ?></a></li>
+        <li><a class="w3-bar-item w3-button" href="?lang=en"><?= $Lang::get('english', 'Inglês') ?></a></li>
+        <li><a class="w3-bar-item w3-button" href="?lang=es"><?= $Lang::get('espanhol', 'Espanhol') ?></a></li>
+        <li><a class="w3-bar-item w3-button" href="?lang=ch"><?= $Lang::get('chines', '中文') ?></a></li>
+        <li><a class="w3-bar-item w3-button" href="?lang=jp"><?= $Lang::get('japones', '日本語') ?></a></li>
+      </ul>
+    </div>
 <div class="w3-panel w3-large">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>

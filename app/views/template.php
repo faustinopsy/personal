@@ -53,8 +53,6 @@ a{cursor: pointer;}
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
     <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black">ALL</button>
       <a href='/home' class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Blog</a>
       <a href='/portifolio' class="w3-button w3-white w3-hide-small"><i class="fa fa-briefcase w3-margin-right"></i>Portifólio</a>
       <a href='/resume' class="w3-button w3-white w3-hide-small"><i class="fa fa-id-card w3-margin-right"></i>Curriculo</a>

@@ -32,24 +32,24 @@ class AdminUserController
 
     public function insert()
     {
-        $uploadDirImages = dirname(__FILE__, 3) . '/public/uploads/';
-        if (!file_exists($uploadDirImages)) {
-            mkdir($uploadDirImages, 0777, true);
-        }
-
-        $image = $_FILES['image'];
-        $imagePath = '/uploads/' . basename($image['name']);
-        move_uploaded_file($image['tmp_name'], $uploadDirImages . basename($image['name']));
-
         $data = [
             'firstName' => strip_tags($_POST['firstName']),
             'lastName' => strip_tags($_POST['lastName']),
             'email' => strip_tags($_POST['email']),
-            'password' => password_hash(strip_tags($_POST['password']), PASSWORD_DEFAULT),
-            'image' => $imagePath,
+            'password' => password_hash(strip_tags($_POST['password']), PASSWORD_DEFAULT)
         ];
 
-        
+        if (!empty($_FILES['image']['name'])) {
+            $uploadDirImages = dirname(__FILE__, 3) . '/public/uploads/';
+            if (!file_exists($uploadDirImages)) {
+                mkdir($uploadDirImages, 0777, true);
+            }
+    
+            $image = $_FILES['image'];
+            $imagePath = '/uploads/' . basename($image['name']);
+            move_uploaded_file($image['tmp_name'], $uploadDirImages . basename($image['name']));
+            $data['image'] = $imagePath;
+        }
 
         if(User::insert($data)){
             Redirect::message('/admin/users', 'Usuário Adicionado com sucesso!');
@@ -76,6 +76,7 @@ class AdminUserController
             'firstName' => strip_tags($_POST['firstName']),
             'lastName' => strip_tags($_POST['lastName']),
             'email' => strip_tags($_POST['email']),
+            'isAdmin' => strip_tags($_POST['perfil']),
         ];
 
         if (!empty($_POST['password'])) {

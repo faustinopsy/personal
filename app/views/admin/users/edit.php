@@ -21,8 +21,16 @@
             <input type="password" name="password" id="password" class="w3-input w3-border">
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Foto</label>
-            <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
+        <label for="perfil" class="w3-text-blue">Perfil</label>
+            <select name="perfil" id="perfil" class="w3-input w3-border" required>
+            <option value="<?= $user->isAdmin ?>"><?= $user->isAdmin ? 'Admin': 'Comum'; ?></option>
+                <option value="0">Comum</option>
+                <option value="1">Admin</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="w3-text-blue">Foto</label>
+            <input type="file" name="image" id="image" class="w3-input w3-border" accept="image/*">
         </div>
         <button type="submit" class="w3-button w3-light-blue">Atualizar</button>
     </form>
