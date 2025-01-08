@@ -1,6 +1,6 @@
 <?php $this->layout('template'); ?>
 
-<section class="w3-container w3-padding-64">
+<section class="w3-container w3-padding-8">
     <h1 class="w3-center"><?= $title ?></h1>
     <div class="w3-row-padding">
         <?php if (!empty($posts)): ?>

@@ -19,10 +19,7 @@ echo '<link rel="stylesheet" href="'.$baseUrl .'/assets/css/font-awesome-4.7.0/c
 ?>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-
-</head>
-<style>
+a{cursor: pointer;}
     .fade-out {
       opacity: 1;
       transition: opacity 1s ease-out;
@@ -44,6 +41,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       }
     });
   </script>
+  </head>
+  <body>
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <?php $this->insert('partials/nav') ?>
 </nav>
@@ -53,13 +52,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>My Portfolio</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">Filter:</span> 
       <button class="w3-button w3-black">ALL</button>
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+      <a href='/home' class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Blog</a>
+      <a href='/portifolio' class="w3-button w3-white w3-hide-small"><i class="fa fa-briefcase w3-margin-right"></i>Portifólio</a>
+      <a href='/resume' class="w3-button w3-white w3-hide-small"><i class="fa fa-id-card w3-margin-right"></i>Curriculo</a>
     </div>
     </div>
   </header>
@@ -70,8 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <?php unset($_SESSION['flash_message']); ?>
   <?php endif; ?>
  
- <!-- Section -->
-  <div class="w3-container w3-padding-large w3-white">
+  <div class="w3-main w3-padding-large w3-white">
     <?= $this->section('content') ?>
   </div>
 

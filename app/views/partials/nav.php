@@ -4,10 +4,10 @@ $authUser = $instances['auth']::auth();
 $routes = [
     'public' => [
         '/' => ['label' => 'Home', 'icon' => 'fa-th-large'],
+        '/resume' => ['label' => 'Curriculo', 'icon' => 'fa-briefcase'],
+        '/portifolio' => ['label' => 'Portfolio', 'icon' => 'fa-briefcase'],
         '/login' => ['label' => 'Login', 'icon' => 'fa-sign-in'],
         '/register' => ['label' => 'Register', 'icon' => 'fa-user-plus'],
-        '/resume' => ['label' => 'Curriculo', 'icon' => 'fa-briefcase'],
-        '/portfolio' => ['label' => 'Portfolio', 'icon' => 'fa-briefcase'],
         '/privacy-policy' => ['label' => 'Privacy Policy', 'icon' => 'fa-file-text-o'],
         '/terms-and-conditions' => ['label' => 'Terms & Conditions', 'icon' => 'fa-clipboard'],
     ],
@@ -17,7 +17,7 @@ $routes = [
         '/admin/users' => ['label' => 'Users', 'icon' => 'fa-user'],
         '/admin/blog-posts' => ['label' => 'Blog Posts', 'icon' => 'fa-file-text'],
         '/admin/portfolio' => ['label' => 'Portfolio Adm', 'icon' => 'fa-briefcase'],
-        '/portfolio' => ['label' => 'Portfolio', 'icon' => 'fa-briefcase'],
+        '/portifolio' => ['label' => 'Portfolio', 'icon' => 'fa-briefcase'],
         '/admin/resumes' => ['label' => 'Curriculo Adm', 'icon' => 'fa-id-card'],
         '/resume' => ['label' => 'Curriculo', 'icon' => 'fa-id-card'],
         '/logout' => ['label' => 'Logout', 'icon' => 'fa-sign-out'],
