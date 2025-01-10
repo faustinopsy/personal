@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Bloqueia acesso ao arquivo .env
+    <FilesMatch "^\.env">
+        Require all denied
+    </FilesMatch>
+
+    # Bloqueia acesso a todos os arquivos iniciados com um ponto (ex.: .env, .gitignore)
+    <FilesMatch "^\.">
+        Require all denied
+    </FilesMatch>
+
+    # Redireciona tudo para a pasta public
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Reescreve URLs amigáveis
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
