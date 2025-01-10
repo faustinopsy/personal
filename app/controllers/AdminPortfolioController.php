@@ -34,7 +34,7 @@ class AdminPortfolioController
     {
         $uploadDirImages = dirname(__FILE__, 3) . '/public/uploads/portfolio/';
         if (!file_exists($uploadDirImages)) {
-            mkdir($uploadDirImages, 0777, true);
+            mkdir($uploadDirImages, 0755, true);
         }
 
         $image = $_FILES['image'];
@@ -78,7 +78,7 @@ class AdminPortfolioController
         if (!empty($_FILES['image']['name'])) {
             $uploadDirImages = dirname(__FILE__, 3) . '/public/uploads/portfolio/';
             if (!file_exists($uploadDirImages)) {
-                mkdir($uploadDirImages, 0777, true);
+                mkdir($uploadDirImages, 0755, true);
             }
 
             $image = $_FILES['image'];

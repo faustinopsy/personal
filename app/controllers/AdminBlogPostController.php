@@ -120,7 +120,7 @@ class AdminBlogPostController
         $cacheFile = $cacheDir . 'blog_content.json';
     
         if (!file_exists($cacheDir)) {
-            mkdir($cacheDir, 0777, true);
+            mkdir($cacheDir, 0755, true);
         }
     
         if (!file_exists($cacheFile)) {
@@ -139,7 +139,7 @@ class AdminBlogPostController
         $cacheFile = $cacheDir . 'blog_content.json';
     
         if (!file_exists($cacheDir)) {
-            mkdir($cacheDir, 0777, true);
+            mkdir($cacheDir, 0755, true);
         }
     
         $cache = json_decode(file_get_contents($cacheFile), true);
